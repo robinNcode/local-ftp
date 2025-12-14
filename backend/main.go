@@ -19,7 +19,7 @@ func main() {
 		fmt.Fprintln(w, "Local FTP Server Running")
 	})
 
-	http.HandleFunc("/api/files", middleware.CORS(handlers.ListFiles))
+	http.HandleFunc("/api/files", middleware.CORS(handlers.ListFilesHandler))
 	http.HandleFunc("/api/upload", middleware.CORS(handlers.Upload))
 	http.HandleFunc("/api/upload-multiple", middleware.CORS(handlers.UploadMultiple))
 	http.HandleFunc("/api/upload-zip", middleware.CORS(handlers.UploadZipNotice))

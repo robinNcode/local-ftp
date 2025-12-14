@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"archive/zip"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -11,7 +12,7 @@ import (
 	"time"
 
 	"local-ftp/config"
-	"local-ftp/utils"
+	//"local-ftp/utils"
 )
 
 func Download(w http.ResponseWriter, r *http.Request) {

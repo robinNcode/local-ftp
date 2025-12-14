@@ -1,20 +1,20 @@
 package utils
 
-import "net"
+//import "net"
 
 func GetLocalIP() string {
-	addrs, err := net.InterfaceAddrs()
-	if err != nil {
-		return "192.168.0.103"
-	}
+	// addrs, err := net.InterfaceAddrs()
+	// if err != nil {
+	// 	return "192.168.0.103"
+	// }
 
-	for _, addr := range addrs {
-		if ipnet, ok := addr.(*net.IPNet); ok &&
-			!ipnet.IP.IsLoopback() &&
-			ipnet.IP.To4() != nil {
-			return ipnet.IP.String()
-		}
-	}
+	// for _, addr := range addrs {
+	// 	if ipnet, ok := addr.(*net.IPNet); ok &&
+	// 		!ipnet.IP.IsLoopback() &&
+	// 		ipnet.IP.To4() != nil {
+	// 		return ipnet.IP.String()
+	// 	}
+	// }
 
 	return "192.168.0.103"
 }
