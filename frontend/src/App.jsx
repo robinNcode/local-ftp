@@ -278,7 +278,7 @@ export default function LocalFTP() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <h1 className="text-3xl font-bold text-gray-800 flex items-center gap-3">
                 <FolderOpen className="text-indigo-600" />
@@ -286,16 +286,16 @@ export default function LocalFTP() {
               </h1>
               <p className="text-gray-600 mt-2">Share files on your local network</p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={fetchFiles}
                 disabled={loading}
-                className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors disabled:opacity-50"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors disabled:opacity-50"
               >
                 <RefreshCw className={`w-5 h-5 ${loading ? 'animate-spin' : ''}`} />
                 Refresh
               </button>
-              <label className="flex items-center gap-2 px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg cursor-pointer transition-colors">
+              <label className="flex items-center justify-center gap-2 px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg cursor-pointer transition-colors">
                 <Upload className="w-5 h-5" />
                 Upload Files
                 <input
@@ -357,21 +357,21 @@ export default function LocalFTP() {
 
         {/* Actions Bar */}
         {selectedFiles.size > 0 && (
-          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mb-6 flex items-center justify-between">
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <span className="text-indigo-900 font-medium">
               {selectedFiles.size} file(s) selected
             </span>
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={handleDownloadSelected}
-                className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors"
               >
                 <Download className="w-4 h-4" />
                 Download Selected
               </button>
               <button
                 onClick={handleDeleteSelected}
-                className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
               >
                 <Trash2 className="w-4 h-4" />
                 Delete Selected
